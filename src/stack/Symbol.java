@@ -12,7 +12,7 @@ public enum Symbol {
   MINUS("-"),
   INVALID("Invalid");
   
-  String symbol;
+  private String symbol;
   
   /**
    * Constructs an instance of <code>Symbol</code>.
@@ -20,7 +20,7 @@ public enum Symbol {
    * @param symbol The <code>String</code> of the symbol that is being
    *               represented.
    */
-  Symbol(String symbol) {
+  private Symbol(String symbol) {
     this.symbol = symbol;
   }
   
