@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>264</y>
+      <w>200</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>stack::OpStack
+--
+-opStack: Stack
+--
+&lt;&lt;contructor&gt;&gt; +opStack()
++push(Symbol operator)
++pop(): Symbol
+    {exception = EmptyStackException}
++top(): Symbol
+    {exception = EmptyStackException}
++size(): int
++isEmpty(): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>600</y>
+      <w>192</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes>stack::Entry
+--
+-number: float
+-symbol: Symbol
+-string: String
+-type: Type
+--
+&lt;&lt;constructor&gt;&gt; + Entry(float number)
+&lt;&lt;constructor&gt;&gt; + Entry(float number)
+&lt;&lt;constructor&gt;&gt; + Entry(float number)
++ getType(): Type
++ getString(): String 
+    {exception = BadTypeException}
++ getSymbol(): Symbol 
+    {exception = BadTypeException}
++ getValue(): float
+    {exception = BadTypeException}
++equals(Object o): boolean
++hashCode(): int
++toString(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>304</x>
+      <y>680</y>
+      <w>200</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>/&lt;&lt;Enumeration&gt;&gt;/
+stack::Symbol
+--
+LEFT_BRACKET("(")
+RIGHT_BRACKET(")")
+TIMES("*")
+DIVIDE("/")
+PLUS("+")
+MINUS("-")
+INVALID("Invalid")
+- symbol: String
+--
+&lt;&lt;constructor&gt;&gt; - Symbol (String symbol)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>712</y>
+      <w>168</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>/&lt;&lt;Enumeration&gt;&gt;/
+stack::Type
+--
+NUMBER
+SYMBOL
+STRING
+INVALID</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>400</y>
+      <w>200</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>stack::Stack
+--
+-size: int
+-entries: List&lt;Entry&gt;
+--
+&lt;&lt;constructor&gt;&gt; + Stack()
++ push(Entry entry)
++ pop(): Entry
+    {exception = EmptyStackException}
++ top(): Entry
+    {exception = EmptyStackException}
++ size(): int
++ isEmpty(): boolean
++equals(Object o): boolean
++hashCode(): int
++toString(): String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>304</x>
+      <y>256</y>
+      <w>200</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>stack::NumStack
+--
+-numStack: Stack
+--
+&lt;&lt;contructor&gt;&gt; +NumStack()
++push(float number)
++pop(): float
+    {exception = EmptyStackException}
++top(): float
+    {exception = EmptyStackException}
++size(): int
++isEmpty(): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>704</x>
+      <y>640</y>
+      <w>144</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>640</y>
+      <w>136</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>608</x>
+      <y>560</y>
+      <w>40</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>408</x>
+      <y>392</y>
+      <w>128</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+
+
+&lt;&lt;facade&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>712</x>
+      <y>400</y>
+      <w>136</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+
+
+&lt;&lt;facade&gt;&gt;</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>288</y>
+      <w>200</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>/&lt;&lt;Interface&gt;&gt;/
+stack::Calculator
+--
++evaluate(String): float
+    {exception = EmptyStackException}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>288</x>
+      <y>224</y>
+      <w>664</w>
+      <h>632</h>
+    </coordinates>
+    <panel_attributes>Stack
+bg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
