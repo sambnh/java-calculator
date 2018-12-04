@@ -1,5 +1,11 @@
 package application;
 
+import java.io.IOException;
+
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 import stack.Model;
 
 /**
@@ -9,6 +15,7 @@ import stack.Model;
 
 public class Controller {
 
+  BorderPane root;
   Model model;
   View view;
   Boolean infix;
@@ -17,15 +24,36 @@ public class Controller {
    * Constructs a new <code>Controller</code> that which stores a
    * <code>View</code> and a <code>Model</code>.
    * 
-   * @param view  - the <code>View</code> to be used
-   * @param model - the <code>Model</code> to be used
    */
 
-  public Controller(View view, Model model) {
-    this.view = view;
-    this.model = model;
+  public Controller() {
+    FXMLLoader loader = new FXMLLoader(
+        application.Driver.class.getResource("GuiView.fxml"));
+    try {
+      root = loader.load();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    view = loader.getController();
+    model = new Model();
     this.view.addCalculateObserver(this::calculate);
     this.view.addTypeObserver(this::changeType);
+  }
+
+  /**
+   * Starts the JavaFX application.
+   * 
+   * @param primaryStage - the primary stage for calculator, onto which the
+   *                     application scene can be set.
+   */
+
+  public void startGui(Stage primaryStage) {
+    Scene scene = new Scene(root, root.getPrefWidth(), root.getPrefHeight());
+    scene.getStylesheets()
+        .add(getClass().getResource("application.css").toExternalForm());
+    primaryStage.setScene(scene);
+    primaryStage.setResizable(false);
+    primaryStage.show();
   }
 
   /**
