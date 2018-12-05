@@ -1,4 +1,5 @@
 package stack;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,11 +90,11 @@ public class Stack {
    * 
    * @return true if this object is the same as the argument; otherwise false.
    */
-  
+
   @Override
   public boolean equals(Object o) {
     if (o instanceof Stack) {
-      return this.hashCode() == o.hashCode();      
+      return this.hashCode() == o.hashCode();
     }
     return false;
   }
@@ -117,16 +118,16 @@ public class Stack {
   /**
    * Returns a string representation of all the entries on the stack.
    * 
-   * @return a string representation of all the entries on the stack. 
+   * @return a string representation of all the entries on the stack.
    */
-  
+
   @Override
   public String toString() {
     if (isEmpty()) {
       return "[]";
     }
     String result = "[" + entries.get(0).toString();
-    for (int i = 1 ; i < size; i++) {
+    for (int i = 1; i < size; i++) {
       result += ", " + entries.get(i).toString();
     }
     return result + "]";

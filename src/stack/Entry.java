@@ -1,9 +1,10 @@
 package stack;
+
 /**
  * Values stored in a Stack.
  */
 public class Entry {
-  
+
   private float number;
   private Symbol symbol;
   private String string;
@@ -14,7 +15,7 @@ public class Entry {
    * 
    * @param number The <code>float</code> that this stores
    */
-  
+
   public Entry(float number) {
     this.number = number;
     type = Type.NUMBER;
@@ -25,7 +26,7 @@ public class Entry {
    * 
    * @param symbol The <code>Symbol</code> that this stores.
    */
-  
+
   public Entry(Symbol symbol) {
     this.symbol = symbol;
     type = Type.SYMBOL;
@@ -36,7 +37,7 @@ public class Entry {
    * 
    * @param string The <code>String</code> that this stores.
    */
-  
+
   public Entry(String string) {
     this.string = string;
     type = Type.STRING;
@@ -47,7 +48,7 @@ public class Entry {
    * 
    * @return this entry's type.
    */
-  
+
   public Type getType() {
     return type;
   }
@@ -64,7 +65,7 @@ public class Entry {
   public String getString() throws BadTypeException {
     if (type != Type.STRING) {
       throw new BadTypeException(
-        "Entry type must be string to call getString()");
+          "Entry type must be string to call getString()");
     }
     return string;
   }
@@ -81,7 +82,7 @@ public class Entry {
   public Symbol getSymbol() throws BadTypeException {
     if (type != Type.SYMBOL) {
       throw new BadTypeException(
-        "Entry type must be symbol to call getSymbol()");
+          "Entry type must be symbol to call getSymbol()");
     }
     return symbol;
   }
@@ -98,32 +99,31 @@ public class Entry {
   public float getValue() throws BadTypeException {
     if (type != Type.NUMBER) {
       throw new BadTypeException(
-        "Entry type must be number to call getValue()");
+          "Entry type must be number to call getValue()");
     }
     return number;
   }
-  
+
   /**
    * Indicates if another object is equal to this one.
    * 
-   * @return true if this object is the same as the argument; 
-   *              otherwise false.
+   * @return true if this object is the same as the argument; otherwise false.
    */
 
   @Override
   public boolean equals(Object o) {
     if (o instanceof Entry) {
-      return this.hashCode() == o.hashCode();      
+      return this.hashCode() == o.hashCode();
     }
     return false;
   }
-  
+
   /**
    * Returns a hash code value for an <code>Entry</code> object.
    * 
    * @return this entry's hash code.
    */
-     
+
   @Override
   public int hashCode() {
     int prime = 31;
@@ -133,13 +133,13 @@ public class Entry {
     result = prime * result + ((string == null) ? 0 : string.hashCode());
     return result;
   }
-  
+
   /**
    * Returns a string representation of an instance of <code>Entry</code>.
    * 
    * @return a string representation of an instance of <code>Entry</code>.
    */
- 
+
   @Override
   public String toString() {
     if (type == Type.SYMBOL) {
@@ -149,5 +149,5 @@ public class Entry {
     }
     return string;
   }
-  
+
 }

@@ -1,4 +1,5 @@
 package stack;
+
 /**
  * Thrown when an application attempts to call either {@link Stack#pop()} or
  * {@link Stack#top()} when the stack is empty.
