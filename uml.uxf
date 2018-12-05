@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>952</x>
+      <y>344</y>
+      <w>200</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>stack::OpStack
+--
+-opStack: Stack
+--
+&lt;&lt;contructor&gt;&gt; +opStack()
++push(Symbol operator)
++pop(): Symbol
+    {exception = EmptyStackException}
++top(): Symbol
+    {exception = EmptyStackException}
++size(): int
++isEmpty(): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>680</y>
+      <w>192</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes>stack::Entry
+--
+-number: float
+-symbol: Symbol
+-string: String
+-type: Type
+--
+&lt;&lt;constructor&gt;&gt; + Entry(float number)
+&lt;&lt;constructor&gt;&gt; + Entry(float number)
+&lt;&lt;constructor&gt;&gt; + Entry(float number)
++ getType(): Type
++ getString(): String 
+    {exception = BadTypeException}
++ getSymbol(): Symbol 
+    {exception = BadTypeException}
++ getValue(): float
+    {exception = BadTypeException}
++equals(Object o): boolean
++hashCode(): int
++toString(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>760</y>
+      <w>200</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>/&lt;&lt;Enumeration&gt;&gt;/
+stack::Symbol
+--
+LEFT_BRACKET("(")
+RIGHT_BRACKET(")")
+TIMES("*")
+DIVIDE("/")
+PLUS("+")
+MINUS("-")
+INVALID("Invalid")
+- symbol: String
+--
+&lt;&lt;constructor&gt;&gt; - Symbol (String symbol)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>952</x>
+      <y>792</y>
+      <w>168</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>/&lt;&lt;Enumeration&gt;&gt;/
+stack::Type
+--
+NUMBER
+SYMBOL
+STRING
+INVALID</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>480</y>
+      <w>200</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>stack::Stack
+--
+-size: int
+-entries: List&lt;Entry&gt;
+--
+&lt;&lt;constructor&gt;&gt; + Stack()
++push(Entry entry)
++pop(): Entry
+    {exception = EmptyStackException}
++top(): Entry
+    {exception = EmptyStackException}
++size(): int
++isEmpty(): boolean
++equals(Object o): boolean
++hashCode(): int
++toString(): String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>336</y>
+      <w>200</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>stack::NumStack
+--
+-numStack: Stack
+--
+&lt;&lt;contructor&gt;&gt; +NumStack()
++push(float number)
++pop(): float
+    {exception = EmptyStackException}
++top(): float
+    {exception = EmptyStackException}
++size(): int
++isEmpty(): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>920</x>
+      <y>720</y>
+      <w>144</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>720</y>
+      <w>136</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>824</x>
+      <y>640</y>
+      <w>40</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>624</x>
+      <y>472</y>
+      <w>128</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+
+
+&lt;&lt;facade&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>928</x>
+      <y>480</y>
+      <w>136</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+
+
+&lt;&lt;facade&gt;&gt;</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>368</y>
+      <w>200</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>/&lt;&lt;Interface&gt;&gt;/
+stack::Calculator
+--
++evaluate(String): float
+    {exception = EmptyStackException}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>504</x>
+      <y>40</y>
+      <w>664</w>
+      <h>896</h>
+    </coordinates>
+    <panel_attributes>Model
+fg=red
+bg=light_gray
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>80</x>
+      <y>40</y>
+      <w>408</w>
+      <h>336</h>
+    </coordinates>
+    <panel_attributes>Controller
+bg=light_gray
+fg=blue
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>80</x>
+      <y>392</y>
+      <w>408</w>
+      <h>544</h>
+    </coordinates>
+    <panel_attributes>View
+fg=green
+bg=light_gray
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>504</y>
+      <w>24</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;330.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>504</y>
+      <w>96</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>200</x>
+      <y>424</y>
+      <w>272</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+application::View
+--
++getExpression(): String
++setAnswer(String answer)
++addCalculateObserver(Observer observer)
++addTypeObserver(Consumer&lt;Boolean&gt; consumer)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>96</x>
+      <y>608</y>
+      <w>272</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>application::AsciiView
+--
++getExpression(): String
++setAnswer(String answer)
++addCalculateObserver(Observer observer)
++addTypeObserver(Consumer&lt;Boolean&gt; consumer)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>208</x>
+      <y>760</y>
+      <w>264</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>application::GuiView
+--
+-answerText: TextField
+-reverseRadio: RadioButton
+-infixRadio: RadioButton
+-calculateButton: Button
+-type: ToggleGroup
+-expressionText: TextField
+--
++getExpression(): String
++setAnswer(String answer)
++addCalculateObserver(Observer observer)
++addTypeObserver(Consumer&lt;Boolean&gt; consumer)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>72</y>
+      <w>184</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>application::Model
+--
++evaluate(String expression): float</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>72</y>
+      <w>192</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>application::Controller
+--
+-root: BorderPane
+-model: Model
+-view: View
+-infix: Boolean
+--
+&lt;&lt;constructor&gt;&gt; +Controller()
++startGui(Stage primaryStage)
+-calculate()
+-changeType(Boolean infix)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>248</y>
+      <w>176</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>application::Driver
+--
+-controller: Controller
+--
++start(Stage primaryStage)
++main(String[] args)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>192</y>
+      <w>24</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;290.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>464</x>
+      <y>104</y>
+      <w>288</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;340.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>192</x>
+      <y>128</y>
+      <w>104</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;150.0;110.0;10.0</additional_attributes>
+  </element>
+</diagram>

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane fx:controller="application.GUIView" maxHeight="240.0" maxWidth="480" minHeight="240.0" minWidth="480" prefHeight="240.0" prefWidth="480" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:controller="application.GuiView" maxHeight="240.0" maxWidth="480" minHeight="240.0" minWidth="480" prefHeight="240.0" prefWidth="480" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <padding>
       <Insets bottom="32.0" left="32.0" right="32.0" top="32.0" />
    </padding>
@@ -37,7 +37,7 @@
                   <Insets left="32.0" />
                </GridPane.margin>
             </RadioButton>
-            <Button fx:id="calculateButton" mnemonicParsing="false" onMouseReleased="#calculateButtonPressed" text="Calculate" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <Button fx:id="calculateButton" mnemonicParsing="false" text="Calculate" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
          </children>
       </GridPane>
    </center>
