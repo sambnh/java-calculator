@@ -7,20 +7,29 @@ package stack;
 
 public class NumStack {
 
-  private float number;
-  private boolean empty = true;
+  private Stack numbers;
+  
+  public NumStack() {
+    numbers = new Stack();
+  }
   
   public boolean isEmpty() {
-    return empty;
+    return numbers.isEmpty();
   }
   
   public void push(float number) {
-    empty = false;
-    this.number = number;
+    numbers.push(new Entry(number));
   }
 
-  public float top() {
-    return number;
+  public float top() throws BadTypeException, EmptyStackException {
+    return numbers.top().getValue();
   }
   
+  public float pop() throws BadTypeException, EmptyStackException {
+    return numbers.pop().getValue();
+  }
+
+  public int size() {
+    return numbers.size();
+  }
 }
