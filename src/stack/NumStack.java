@@ -7,6 +7,7 @@ package stack;
 
 public class NumStack {
 
+  private float number;
   private boolean empty = true;
   
   public boolean isEmpty() {
@@ -15,5 +16,11 @@ public class NumStack {
   
   public void push(float number) {
     empty = false;
+    this.number = number;
   }
+
+  public float top() {
+    return number;
+  }
+  
 }

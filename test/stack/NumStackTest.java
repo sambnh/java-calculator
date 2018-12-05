@@ -1,5 +1,6 @@
 package stack;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -23,16 +24,6 @@ public class NumStackTest {
   public void setup() {
     numStack = new NumStack();
   }
-
-  /**
-   * Tests if a <code>NumStack</code> object can be instantiated, achieved by
-   * implicitly calling {@link #setup()}.
-   */
-
-  @Test
-  public void instantiates() {
-    assertNotNull("Stack is null", numStack);
-  } // Solution: Created empty Stack class
 
   /**
    * Tests if <code>isEmpty</code> returns <code>true</code> when there are no
@@ -65,5 +56,29 @@ public class NumStackTest {
   } // Solution: Added boolean variable empty, Added constructor
   // to initialised empty as true, empty is set to false
   // when push is called and isEmpty now returns empty
-
+ 
+  /**
+   * Tests if <code>top</code> returns the same value as a pushed
+   * <code>float</code>.
+   */
+  
+  @Test
+  public void topReturnsOne() {
+    numStack.push(1.0f);
+    assertEquals("top() did not return the float passed into push()",
+        numStack.top(), 1.0f, 0);
+  } // Solution: Added top method which returns 1.0f.
+  
+  /**
+   * Tests if <code>top</code> returns the same value as a pushed
+   * <code>float</code>, which is different to the previous test.
+   */
+  
+  @Test
+  public void topReturnsZero() {
+    numStack.push(0.0f);
+    assertEquals("top() did not return the float passed into push()",
+        numStack.top(), 0.0f, 0);
+  } // Solution: Added number variable which is set to the parameter 
+  //             of push, added top which returns number
 }
