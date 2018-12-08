@@ -32,7 +32,7 @@ public class NumStackTest {
   @Test
   public void isEmptyReturnsTrue() {
     assertTrue("isEmpty() did not return true", numStack.isEmpty());
-  } // Solution: Added isEmpty which returns false
+  } // Solution: Added isEmpty which returns true
 
   /**
    * Tests if <code>push</code> runs when a <code>float</code> is passed.
@@ -60,9 +60,9 @@ public class NumStackTest {
    * Tests if <code>top</code> returns the same value as a pushed
    * <code>float</code>.
    * 
-   * @throws EmptyStackException - if <code>top</code> is called when the stack
+   * @throws EmptyStackException if <code>top</code> is called when the stack
    *                             has no elements.
-   * @throws BadTypeException    - if <code>top</code> on a stack with non float
+   * @throws BadTypeException    if <code>top</code> on a stack with non float
    *                             entries
    */
   
@@ -76,9 +76,9 @@ public class NumStackTest {
   /**
    * Tests if <code>top</code> returns the same value as a pushed
    * <code>float</code>, which is different to the previous test.
-   * @throws EmptyStackException - if <code>top</code> is called when the stack
+   * @throws EmptyStackException if <code>top</code> is called when the stack
    *                             has no elements.
-   * @throws BadTypeException    - if <code>top</code> on a stack with non float
+   * @throws BadTypeException    if <code>top</code> on a stack with non float
    *                             entries
    */
   
@@ -93,25 +93,42 @@ public class NumStackTest {
   /**
    * Tests if <code>pop</code> returns the same value as a pushed
    * <code>float</code>.
-   * @throws EmptyStackException - if <code>pop</code> is called when the stack
+   * @throws EmptyStackException if <code>pop</code> is called when the stack
    *                             has no elements.
-   * @throws BadTypeException    - if <code>pop</code> on a stack with non float
+   * @throws BadTypeException    if <code>pop</code> on a stack with non float
    *                             entries
    */
   
   @Test
-  public void popReturnsFloat() throws BadTypeException, EmptyStackException {
+  public void popReturnsOne() throws BadTypeException, EmptyStackException {
     numStack.push(1.0f);
     assertEquals("pop() did not return the float passed into push()",
         numStack.pop(), 1.0f, 0);
-  } // Solution: Added pop which returns top
+  } // Solution: Added pop which returns 1.0f
 
+  
+  /**
+   * Tests if <code>pop</code> returns the same value as a pushed
+   * <code>float</code>, which is different to the previous test.
+   * @throws EmptyStackException if <code>pop</code> is called when the stack
+   *                             has no elements.
+   * @throws BadTypeException    if <code>pop</code> on a stack with non float
+   *                             entries
+   */
+  
+  @Test
+  public void popReturnsZero() throws BadTypeException, EmptyStackException {
+    numStack.push(0.0f);
+    assertEquals("pop() did not return the float passed into push()",
+        numStack.pop(), 0.0f, 0);
+  } // Solution: Changed pop to return top
+  
   /**
    * Tests if <code>isEmpty</code> returns <code>true</code> when an
    * <code>float</code> has been pushed and popped.
-   * @throws EmptyStackException - if <code>pop</code> is called when the stack
+   * @throws EmptyStackException if <code>pop</code> is called when the stack
    *                             has no elements.
-   * @throws BadTypeException    - if <code>pop</code> on a stack with non float
+   * @throws BadTypeException    if <code>pop</code> on a stack with non float
    *                             entries
    */
   
@@ -149,9 +166,9 @@ public class NumStackTest {
    * Tests if <code>size</code> returns <code>0</code> when a <code>float</code>
    * has been pushed onto the stack and popped.
    * 
-   * @throws EmptyStackException - if <code>pop</code> is called when the stack
+   * @throws EmptyStackException if <code>pop</code> is called when the stack
    *                             has no elements.
-   * @throws BadTypeException    - if <code>pop</code> on a stack with non float
+   * @throws BadTypeException    if <code>pop</code> on a stack with non float
    *                             entries
    */
   
@@ -167,9 +184,9 @@ public class NumStackTest {
    * Tests if <code>pop</code> returns the same value as a pushed
    * <code>float</code> after pushing and popping another <code>float</code>.
    * 
-   * @throws EmptyStackException - if <code>pop</code> is called when the stack
+   * @throws EmptyStackException if <code>pop</code> is called when the stack
    *                             has no elements.
-   * @throws BadTypeException    - if <code>pop</code> on a stack with non float
+   * @throws BadTypeException    if <code>pop</code> on a stack with non float
    *                             entries
    */
 
@@ -179,7 +196,8 @@ public class NumStackTest {
     numStack.push(0.0f);
     numStack.push(1.0f);
     numStack.pop();
-    assertEquals(numStack.pop(), 0.0f, 0);
+    assertEquals("pop() did not return the first float pushed", numStack.pop(),
+        0.0f, 0);
   } // Solution: Added Stack numbers, added constructor which initialises
   //             numbers, changed methods to call equivalent methods in numbers
   //             and removed redundant variables

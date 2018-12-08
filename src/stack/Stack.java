@@ -32,7 +32,7 @@ public class Stack {
   }
 
   /**
-   * Removes an <code>Entry</code> from the top of the stack and returns it.
+   * Removes an <code>Entry</code> from the top of the stack and removes it.
    * 
    * @return the top <code>Entry</code> on the stack.
    * @throws EmptyStackException - if the stack is empty.
@@ -76,7 +76,8 @@ public class Stack {
   /**
    * Returns <code>true</code> if the stack is empty.
    * 
-   * @return true if the stack is empty; otherwise false.
+   * @return <code>true</code> if the stack is empty; otherwise
+   *         <code>false</code>.
    */
 
   public boolean isEmpty() {
@@ -88,7 +89,8 @@ public class Stack {
    * 
    * @param o - the reference object which to compare.
    * 
-   * @return true if this object is the same as the argument; otherwise false.
+   * @return <code>true</code> if this object is the same as the argument;
+   *         otherwise <code>true</code>.
    */
 
   @Override
