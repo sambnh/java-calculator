@@ -63,7 +63,7 @@ public class Controller {
    */
 
   private void calculate() {
-    view.setAnswer(String.valueOf(model.evaluate(view.getExpression())));
+    view.setAnswer(model.evaluate(view.getExpression()));
   }
 
   /**
@@ -74,7 +74,7 @@ public class Controller {
    */
 
   private void changeType(Boolean infix) {
-    this.infix = infix;
+    model.changeType(infix);
   }
 
 }

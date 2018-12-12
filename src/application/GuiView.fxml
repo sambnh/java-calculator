@@ -24,7 +24,7 @@
          <children>
             <TextField fx:id="expressionText" GridPane.rowIndex="1" />
             <TextField fx:id="answerText" disable="true" opacity="0.5" />
-            <RadioButton fx:id="reverseRadio" mnemonicParsing="false" text="Reverse Polish" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+            <RadioButton fx:id="reverseRadio" mnemonicParsing="false" selected="true" text="Reverse Polish" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                <toggleGroup>
                   <ToggleGroup fx:id="type" />
                </toggleGroup>
@@ -32,7 +32,7 @@
                   <Insets right="32.0" />
                </GridPane.margin>
             </RadioButton>
-            <RadioButton fx:id="infixRadio" mnemonicParsing="false" selected="true" text="Infix" toggleGroup="$type" GridPane.rowIndex="2">
+            <RadioButton fx:id="infixRadio" mnemonicParsing="false" text="Infix" toggleGroup="$type" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="32.0" />
                </GridPane.margin>
